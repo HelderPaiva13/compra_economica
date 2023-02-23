@@ -25,9 +25,11 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './src/screens/Home';
-import Chat from './src/screens/Chat';
 import Lista from './src/screens/Lista';
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import { ChatText, ListPlus, House } from 'phosphor-react-native';
+import MessagesScreen from './src/screens/MessagesScreen.js';
+import ChatScreen from './src/screens/ChatScreen';
 
 
 type SectionProps = PropsWithChildren<{
@@ -61,7 +63,7 @@ function Section({children, title}: SectionProps): JSX.Element {
 }
 
 const Tab = createBottomTabNavigator();
-
+const Stack = createNativeStackNavigator()
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -70,17 +72,33 @@ function App(): JSX.Element {
   };
 
   return (
-    <NavigationContainer>
+    <NavigationContainer >
     <Tab.Navigator>
-      <Tab.Screen name='Home' component={Home} options={{ tabBarIcon: () => 
-        (<House size={32} />)
+      <Tab.Screen 
+      name='Home' 
+      component={Home} 
+      options={{ tabBarIcon: () => 
+        (<House size={32} />),
+        headerShown: false
       }}/>
-      <Tab.Screen name='Lista' component={Lista} options={{tabBarIcon: () => 
-        (<ListPlus size={32} />)}}/>
-      <Tab.Screen name='Chat' component={Chat} options={{tabBarIcon: () =>(
-        <ChatText size={32} />
-      )}}/>
+
+      <Tab.Screen 
+      name='Lista' 
+      component={Lista} 
+      options={{tabBarIcon: () => 
+        (<ListPlus size={32} />),
+        headerShown: false
+      }}/>
+      <Tab.Screen 
+      name='MessagesScreen' 
+      component={MessagesScreen} 
+      options={{tabBarIcon: () =>
+        (<ChatText size={32} />),
+        headerShown: false
+      }}/>
+
     </Tab.Navigator>
+    
   </NavigationContainer>
   );
 }

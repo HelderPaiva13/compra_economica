@@ -2,10 +2,10 @@ import React from "react";
 import {Text } from "react-native"
 
 
-const Chat = ()=> {
+const ChatScreen = ()=> {
     return (
-        <Text>Chat...</Text>
+        <Text>chat</Text>
     );
 }
   
-export default Chat;
+export default ChatScreen;

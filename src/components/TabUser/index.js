@@ -3,7 +3,7 @@ import {Text } from "react-native"
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from "../../screens/Home";
-import Sobre from "../../screens/Sobre";
+import Sobre from "../../screens/MessagesScreen.js";
 
 const Tab = createBottomTabNavigator();
 const TabUser = ()=> {
