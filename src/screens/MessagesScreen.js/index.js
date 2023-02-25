@@ -1,6 +1,5 @@
 import React from "react";
-import {Text, FlatList, View } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
+import { FlatList, View } from "react-native";
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {
     Card, 
@@ -54,7 +53,7 @@ const MessagesScreen = ({navigation}) => {
             data={Messages}
             keyExtractor={item=>item.id}
             renderItem={({item}) => (
-                <Card onPress={()=> navigation.navigate('Chat')}>
+                <Card onPress={()=> navigation.navigate('Chat', {userName: item.userName})}>
                  <UserInfo>
                     <UserImgWrapper>
                         <UserImg source={item.userImg} />

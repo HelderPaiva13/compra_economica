@@ -1,19 +1,39 @@
 import React from "react";
 import {Text } from "react-native"
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ChatText, ListPlus, House } from 'phosphor-react-native';
 import Home from "../../screens/Home";
-import Sobre from "../../screens/MessagesScreen.js";
+import Lista from "../../screens/Lista";
+import MessagesScreen from "../../screens/MessagesScreen.js"
 
 const Tab = createBottomTabNavigator();
 const TabUser = ()=> {
     return (
-    <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name='Home' component={Home}/>
-        <Tab.Screen name='Sobre' component={Sobre}/>
-      </Tab.Navigator>
-    </NavigationContainer>
+      <Tab.Screen 
+      name='Home' 
+      component={Home} 
+      options={{ tabBarIcon: () => 
+        (<House size={32} />),
+        headerShown: false
+      }}/>
+
+      <Tab.Screen 
+      name='Lista' 
+      component={Lista} 
+      options={{tabBarIcon: () => 
+        (<ListPlus size={32} />),
+        headerShown: false
+      }}/>
+      <Tab.Screen 
+      name='MessagesScreen' 
+      component={MessagesScreen} 
+      options={{tabBarIcon: () =>
+        (<ChatText size={32} />),
+        headerShown: false
+      }}/>
+
+    </Tab.Navigator>
     );
 }
   
