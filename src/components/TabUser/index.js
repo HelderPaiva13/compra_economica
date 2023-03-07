@@ -26,11 +26,12 @@ const TabUser = ()=> {
         headerShown: false
       }}/>
       <Tab.Screen 
-      name='MessagesScreen' 
+      name='Messages' 
       component={MessagesScreen} 
       options={{tabBarIcon: () =>
         (<ChatText size={32} />),
         headerShown: false
+        
       }}/>
 
     </Tab.Navigator>

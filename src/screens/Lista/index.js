@@ -1,10 +1,13 @@
 import React from "react";
-import {Text } from "react-native"
+import {Text, View, Button } from "react-native"
 
 
 const Lista = ()=> {
     return (
-        <Text>Lista</Text>
+        <View>
+            <Text>Lista</Text>
+        </View>
+        
     );
 }
   

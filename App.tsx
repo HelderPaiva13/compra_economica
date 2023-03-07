@@ -71,7 +71,12 @@ function App(): JSX.Element {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Inicio' component={TabUser} options={{headerShown: false}}/>
-        <Stack.Screen name='Chat' component={ChatScreen}/>
+        <Stack.Screen 
+          name='Chat' 
+          component={ChatScreen} 
+          options={ ({route}) => ({
+            title: route.params?.userName, 
+          })}/>
       </Stack.Navigator>
     
     </NavigationContainer>
